@@ -42,6 +42,36 @@
             margin-bottom: 20px;
         }
 
+        /* User Info */
+        .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .user-info img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .user-info div {
+            text-align: left;
+        }
+
+        .user-info div h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #34495e;
+        }
+
+        .user-info div span {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
         /* Button */
         .dashboard-container .action-btn {
             display: inline-block;
@@ -79,6 +109,16 @@
 </head>
 <body>
     <div class="dashboard-container">
+        <!-- User Info -->
+        <div class="user-info">
+            <!-- Display the avatar -->
+            <img src="{{ $user->avatar }}" alt="User Avatar">
+            <div>
+                <h3>{{ $user->name }}</h3>
+                <span>{{ $user->email }}</span>
+            </div>
+        </div>
+
         <h1>Welcome to Your Dashboard!</h1>
         <p>You have successfully logged in. Start exploring your personalized content.</p>
         <div>

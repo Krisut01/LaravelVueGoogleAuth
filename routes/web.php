@@ -13,9 +13,15 @@ Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
 // Dashboard Route (requires authentication)
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware('auth');
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $user = Auth::user(); // Retrieve the logged-in user
+    return view('dashboard', ['user' => $user]);
 })->middleware('auth');
+
 
 // Login Page Route
 Route::get('/login', function () {
